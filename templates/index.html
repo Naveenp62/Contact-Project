@@ -1,0 +1,16 @@
+<h1>CONTACT LIST</h1>
+<form method="POST">{% csrf_token %} 
+    <label for="name">Title</label>
+    <input type="text" name="name" id="nameid" placeholder="enter name" required>
+    <label for="no">Description</label>
+    <input type="number" name="no" id="no" palceholder="enter number" required>
+    <button type="submit">Search</button>
+</form>
+<hr>
+<h2>Name: {{ res.name }}</h2>
+<h2>Number :{{ res.number }}</h2>
+{% if res.name and res.number %}
+<h2>Contact Successfully Saved</h2>
+{% else %}
+<h2>No Contact Saved</h2>
+{% endif %}
